@@ -2,13 +2,12 @@ pipeline {
     agent any
 
 
-    stages {
+  stages {
         stage('SCM Checkout'){
           git 'https://github.com/prakashk0301/maven-project'
         }
   }
-    {
-        stage ('Compile Stage') {
+   stage ('Compile Stage') {
 
             steps {
                 withMaven(maven : 'maven-project') {
@@ -21,6 +20,6 @@ pipeline {
                      sh 'mvn clean test'
                     }
                 }
-}
-}
-}
+              }
+       }
+  }
