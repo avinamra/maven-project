@@ -30,4 +30,18 @@ pipeline {
             }
         }
     }
-}
+    satge {
+        step {
+            {
+                sshagent(['9ab64fbb-f839-471c-bd1f-e190e39a4b55']) {
+                    // some block
+                }
+
+                {
+                    sshagent(credentials: ['9ab64fbb-f839-471c-bd1f-e190e39a4b55']) {
+                        sh 'ssh -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.80.82:/var/lib/tomcat/webapps'
+                    }
+                }
+
+            }
+        }
