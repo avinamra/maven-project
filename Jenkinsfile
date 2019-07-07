@@ -13,7 +13,7 @@ pipeline {
                 }
             }
         }
-    } {
+   
         stage('Test') {
             steps {
                 withMaven(maven: 'maven-project') {
@@ -21,7 +21,7 @@ pipeline {
                 }
             }
         }
-    } {
+    
         stage('ins') {
             steps {
                 withMaven(maven: 'maven-project') {
