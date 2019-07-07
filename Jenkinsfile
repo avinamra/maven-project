@@ -21,5 +21,13 @@ pipeline {
                 }
             }
         }
+    } {
+        stage('ins') {
+            steps {
+                withMaven(maven: 'maven-project') {
+                    sh 'mvn clean install'
+                }
+            }
+        }
     }
 }
