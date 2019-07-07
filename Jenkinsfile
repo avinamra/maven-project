@@ -30,7 +30,7 @@ pipeline {
             }
         }
     }
-    satge {
+    satge('deploy') {
         steps {
             sshagent(['9ab64fbb-f839-471c-bd1f-e190e39a4b55']) {
                 // some block
