@@ -10,14 +10,14 @@ pipeline {
         stage('Compile Stage') {
             agent { label 'apache-maven'}
             steps {
-                withMaven(apache-maven: 'apache-maven') {
+                withMaven(maven: 'apache-maven') {
                     sh 'mvn clean compile'
                 }
             }
         }
         stage('Test') {
             steps {
-                withMaven(maven: 'maven-project') {
+                withMaven(maven: 'apache-maven') {
                     sh 'mvn clean test'
                 }
             }
@@ -25,7 +25,7 @@ pipeline {
     
         stage('ins') {
             steps {
-                withMaven(maven: 'maven-project') {
+                withMaven(maven: 'apache-maven') {
                     sh 'mvn clean install'
                 }
             }
