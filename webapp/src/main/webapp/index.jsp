@@ -5,3 +5,4 @@ dgfkgjfgkj
 this is new file
 ulala
 this is automatic deploy with freestyle
+same project no trigger
