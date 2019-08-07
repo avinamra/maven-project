@@ -31,6 +31,14 @@ pipeline {
             steps {
                 withMaven(maven : 'maven') {
                     sh 'mvn install'
+                    }
+            }
+        }
+                    
+        stage ('deploy to tomcat') {
+            steps {
+                sshagent(['ssh-key']) {
+                    sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.43.64:/var/lib/tomcat/webapps'
                 }
             }
         }
